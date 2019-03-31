@@ -74,6 +74,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="进击的小超人" type="application/atom+xml">
+
 
 
 
@@ -83,32 +85,32 @@
 <meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo博客快速搭建教程">
-<meta property="og:url" content="https://zhongchaocheng.github.io/2019/03/31/Hexo博客快速搭建教程/index.html">
+<meta property="og:url" content="https://zhongchaocheng.github.io/Hexo博客快速搭建教程/index.html">
 <meta property="og:site_name" content="进击的小超人">
 <meta property="og:description" content="之前在工作学习中碰到的一些问题，经常能够在别人的博客里找到解决方案，当时就萌生了自己也开一个博客的念头，记录下自己走过的坑，同时也可以记录生活，记录想法。可惜一直没有实践，直到最近看到一篇文章：利用Github Page搭建Hexo个人博客，于是就开始了解这方面的知识。经过一晚上的踩坑，终于搭建好了。下面是在我自己电脑搭建好了以后，用我舍友的电脑重新搭建来写的教程。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://zhongchaocheng.github.io/2019/03/31/Hexo博客快速搭建教程/git.png">
-<meta property="og:image" content="https://zhongchaocheng.github.io/2019/03/31/Hexo博客快速搭建教程/nodejs.png">
-<meta property="og:image" content="https://zhongchaocheng.github.io/2019/03/31/Hexo博客快速搭建教程/git_bash.png">
-<meta property="og:image" content="https://zhongchaocheng.github.io/2019/03/31/Hexo博客快速搭建教程/hexo_install.jpg">
-<meta property="og:image" content="https://zhongchaocheng.github.io/2019/03/31/Hexo博客快速搭建教程/hexo_init.jpg">
-<meta property="og:image" content="https://zhongchaocheng.github.io/2019/03/31/Hexo博客快速搭建教程/blog_init.png">
-<meta property="og:image" content="https://zhongchaocheng.github.io/2019/03/31/Hexo博客快速搭建教程/your_repository.png">
-<meta property="og:image" content="https://zhongchaocheng.github.io/2019/03/31/Hexo博客快速搭建教程/repository.png">
-<meta property="og:image" content="https://zhongchaocheng.github.io/2019/03/31/Hexo博客快速搭建教程/creat_repo.png">
-<meta property="og:image" content="https://zhongchaocheng.github.io/2019/03/31/Hexo博客快速搭建教程/ssh.png">
-<meta property="og:image" content="https://zhongchaocheng.github.io/2019/03/31/Hexo博客快速搭建教程/ssh_setting.png">
-<meta property="og:image" content="https://zhongchaocheng.github.io/2019/03/31/Hexo博客快速搭建教程/git_test.png">
-<meta property="og:image" content="https://zhongchaocheng.github.io/2019/03/31/Hexo博客快速搭建教程/git_success.png">
-<meta property="og:image" content="https://zhongchaocheng.github.io/2019/03/31/Hexo博客快速搭建教程/jiexi.png">
-<meta property="og:image" content="https://zhongchaocheng.github.io/2019/03/31/Hexo博客快速搭建教程/jiexi_setting.png">
-<meta property="og:image" content="https://zhongchaocheng.github.io/2019/03/31/Hexo博客快速搭建教程/Custom%20domain.png">
-<meta property="og:image" content="https://zhongchaocheng.github.io/2019/03/31/Hexo博客快速搭建教程/CNAME.png">
-<meta property="og:updated_time" content="2019-03-31T11:32:05.306Z">
+<meta property="og:image" content="https://zhongchaocheng.github.io/Hexo博客快速搭建教程/git.png">
+<meta property="og:image" content="https://zhongchaocheng.github.io/Hexo博客快速搭建教程/nodejs.png">
+<meta property="og:image" content="https://zhongchaocheng.github.io/Hexo博客快速搭建教程/git_bash.png">
+<meta property="og:image" content="https://zhongchaocheng.github.io/Hexo博客快速搭建教程/hexo_install.jpg">
+<meta property="og:image" content="https://zhongchaocheng.github.io/Hexo博客快速搭建教程/hexo_init.jpg">
+<meta property="og:image" content="https://zhongchaocheng.github.io/Hexo博客快速搭建教程/blog_init.png">
+<meta property="og:image" content="https://zhongchaocheng.github.io/Hexo博客快速搭建教程/your_repository.png">
+<meta property="og:image" content="https://zhongchaocheng.github.io/Hexo博客快速搭建教程/repository.png">
+<meta property="og:image" content="https://zhongchaocheng.github.io/Hexo博客快速搭建教程/creat_repo.png">
+<meta property="og:image" content="https://zhongchaocheng.github.io/Hexo博客快速搭建教程/ssh.png">
+<meta property="og:image" content="https://zhongchaocheng.github.io/Hexo博客快速搭建教程/ssh_setting.png">
+<meta property="og:image" content="https://zhongchaocheng.github.io/Hexo博客快速搭建教程/git_test.png">
+<meta property="og:image" content="https://zhongchaocheng.github.io/Hexo博客快速搭建教程/git_success.png">
+<meta property="og:image" content="https://zhongchaocheng.github.io/Hexo博客快速搭建教程/jiexi.png">
+<meta property="og:image" content="https://zhongchaocheng.github.io/Hexo博客快速搭建教程/jiexi_setting.png">
+<meta property="og:image" content="https://zhongchaocheng.github.io/Hexo博客快速搭建教程/Custom%20domain.png">
+<meta property="og:image" content="https://zhongchaocheng.github.io/Hexo博客快速搭建教程/CNAME.png">
+<meta property="og:updated_time" content="2019-03-31T12:28:36.132Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客快速搭建教程">
 <meta name="twitter:description" content="之前在工作学习中碰到的一些问题，经常能够在别人的博客里找到解决方案，当时就萌生了自己也开一个博客的念头，记录下自己走过的坑，同时也可以记录生活，记录想法。可惜一直没有实践，直到最近看到一篇文章：利用Github Page搭建Hexo个人博客，于是就开始了解这方面的知识。经过一晚上的踩坑，终于搭建好了。下面是在我自己电脑搭建好了以后，用我舍友的电脑重新搭建来写的教程。">
-<meta name="twitter:image" content="https://zhongchaocheng.github.io/2019/03/31/Hexo博客快速搭建教程/git.png">
+<meta name="twitter:image" content="https://zhongchaocheng.github.io/Hexo博客快速搭建教程/git.png">
 
 
 
@@ -138,7 +140,7 @@
 
 
 
-  <link rel="canonical" href="https://zhongchaocheng.github.io/2019/03/31/Hexo博客快速搭建教程/">
+  <link rel="canonical" href="https://zhongchaocheng.github.io/Hexo博客快速搭建教程/">
 
 
 
@@ -209,6 +211,36 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -251,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhongchaocheng.github.io/2019/03/31/Hexo博客快速搭建教程/">
+    <link itemprop="mainEntityOfPage" href="https://zhongchaocheng.github.io/Hexo博客快速搭建教程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="七月的Leo">
@@ -300,7 +332,43 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.7k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9 分钟
+                </span>
+              
+            </div>
           
 
           
@@ -338,27 +406,27 @@
 <li><a href="#发布文章">发布文章</a></li>
 </ol>
 <h1 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h1><p>Git是目前世界上最先进的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。也就是用来管理你的hexo博客文章，上传到GitHub的工具。Git非常强大，我觉得建议每个人都去了解一下。廖雪峰老师的Git教程写的非常好，大家可以了解一下。<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">Git教程</a></p>
-<p>windows：到git官网上下载,<a href="https://gitforwindows.org/" target="_blank" rel="noopener">Download git</a>,下载后会有一个Git Bash的命令行工具，以后就用这个工具来使用git。如果用浏览器下载速度比较慢，可以使用迅雷下载。<br><img src="/2019/03/31/Hexo博客快速搭建教程/git.png" alt><br>linux：对linux来说实在是太简单了，因为最早的git就是在linux上编写的，只需要一行代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure></p>
+<p>windows：到git官网上下载,<a href="https://gitforwindows.org/" target="_blank" rel="noopener">Download git</a>,下载后会有一个Git Bash的命令行工具，以后就用这个工具来使用git。如果用浏览器下载速度比较慢，可以使用迅雷下载。<br><img src="/Hexo博客快速搭建教程/git.png" alt><br>linux：对linux来说实在是太简单了，因为最早的git就是在linux上编写的，只需要一行代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure></p>
 <p>这里我使用的是win10 64位的环境，下载安装包之后，一直next就可以。</p>
 <p>安装好以后可以在cmd里输入命令查看是否安装成功，如果返回了git的版本，那么git就已经安装好了</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
 <h1 id="安装NodeJs"><a href="#安装NodeJs" class="headerlink" title="安装NodeJs"></a>安装NodeJs</h1><p>Hexo是基于nodeJS编写的，所以需要安装一下nodeJs和里面的npm工具。</p>
-<p>windows：<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">nodejs</a>选择LTS版本就行了。同样，如果浏览器下载慢就用迅雷下载。下载好以后，打开安装包，一直next就可以。<br><img src="/2019/03/31/Hexo博客快速搭建教程/nodejs.png" alt><br>linux：</p>
+<p>windows：<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">nodejs</a>选择LTS版本就行了。同样，如果浏览器下载慢就用迅雷下载。下载好以后，打开安装包，一直next就可以。<br><img src="/Hexo博客快速搭建教程/nodejs.png" alt><br>linux：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nodejs</span><br><span class="line">sudo apt-get install npm</span><br></pre></td></tr></table></figure>
 <p>安装完后，打开cmd<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure></p>
 <p>检查一下有没有安装成功</p>
 <p>顺便说一下，windows在git安装完后，就可以直接在文件夹的空白处，右键-&gt;git bash来敲命令行了，不用自带的cmd，cmd有点难用。</p>
-<h1 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h1><p>前面git和nodejs安装好后，就可以安装hexo了，你可以先创建一个文件夹blog，然后<code>cd</code>到这个文件夹下（或者在这个文件夹下直接右键git bash打开）。<br>这里我在E盘新建了一个myblog文件夹来作为这个项目的本地大本营。<br><img src="/2019/03/31/Hexo博客快速搭建教程/git_bash.png" alt></p>
+<h1 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h1><p>前面git和nodejs安装好后，就可以安装hexo了，你可以先创建一个文件夹blog，然后<code>cd</code>到这个文件夹下（或者在这个文件夹下直接右键git bash打开）。<br>这里我在E盘新建了一个myblog文件夹来作为这个项目的本地大本营。<br><img src="/Hexo博客快速搭建教程/git_bash.png" alt></p>
 <p>输入命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
 <p>安装时间可能需要3-4分钟，请耐心等待…</p>
 <p>安装好之后，可能会有WARN(warning警告)，可以不用管它，不影响后面的操作。</p>
-<p><img src="/2019/03/31/Hexo博客快速搭建教程/hexo_install.jpg" alt><br>依旧可以查看一下版本</p>
+<p><img src="/Hexo博客快速搭建教程/hexo_install.jpg" alt><br>依旧可以查看一下版本</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
 <p>至此就全部安装完了。</p>
 <p><strong>接下来初始化一下hexo</strong><br>在你之前创建的文件夹，右键打开git bash<br>输入下面的指令，注意文件夹<strong>必须是空的</strong>，不然会报错！</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-<p><img src="/2019/03/31/Hexo博客快速搭建教程/hexo_init.jpg" alt><br>初始化完成后，指定文件夹目录下有：</p>
+<p><img src="/Hexo博客快速搭建教程/hexo_init.jpg" alt><br>初始化完成后，指定文件夹目录下有：</p>
 <ul>
 <li>node_modules: 依赖包</li>
 <li>public：存放生成的页面</li>
@@ -369,10 +437,10 @@
 </ul>
 <p>输入下面两条指令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g </span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<p>打开hexo的服务，在浏览器输入<code>localhost:4000</code>就可以看到你生成的博客了。<br>大概长这样，里面已经有了一篇Hellow World的文章：<br><img src="/2019/03/31/Hexo博客快速搭建教程/blog_init.png" alt><br>使用ctrl+c可以把服务关掉。这里相当于是在本地服务器中预览你生成的网页。<br><code>hexo g</code>是生成静态页面的命令，<code>hexo server</code>也可以简写<code>hexo s</code>，用于开启本地服务器预览。</p>
+<p>打开hexo的服务，在浏览器输入<code>localhost:4000</code>就可以看到你生成的博客了。<br>大概长这样，里面已经有了一篇Hellow World的文章：<br><img src="/Hexo博客快速搭建教程/blog_init.png" alt><br>使用ctrl+c可以把服务关掉。这里相当于是在本地服务器中预览你生成的网页。<br><code>hexo g</code>是生成静态页面的命令，<code>hexo server</code>也可以简写<code>hexo s</code>，用于开启本地服务器预览。</p>
 <p>接下来，我们需要把博客放到github page上托管。</p>
 <h1 id="GitHub创建个人仓库"><a href="#GitHub创建个人仓库" class="headerlink" title="GitHub创建个人仓库"></a>GitHub创建个人仓库</h1><p>首先，你先要有一个GitHub账户，去<a href="https://github.com/" target="_blank" rel="noopener">全球最大同性交友网站</a>注册一个吧。</p>
-<p>注册完登录后，在<a href="https://github.com/" target="_blank" rel="noopener">GitHub.com</a>中点击你的头像看到一个Your repository，点击进入你的仓库<br><img src="/2019/03/31/Hexo博客快速搭建教程/your_repository.png" alt><br>点击New，新建一个仓库<br><img src="/2019/03/31/Hexo博客快速搭建教程/repository.png" alt><br>创建一个仓库，名字为，<code>xxx.github.io</code>，只有这样，将来要部署到GitHub page的时候，才会被识别，其中xxx就是你注册GitHub的用户名。<br><img src="/2019/03/31/Hexo博客快速搭建教程/creat_repo.png" alt><br>填好以后，点击Create repository创建即可。</p>
+<p>注册完登录后，在<a href="https://github.com/" target="_blank" rel="noopener">GitHub.com</a>中点击你的头像看到一个Your repository，点击进入你的仓库<br><img src="/Hexo博客快速搭建教程/your_repository.png" alt><br>点击New，新建一个仓库<br><img src="/Hexo博客快速搭建教程/repository.png" alt><br>创建一个仓库，名字为，<code>xxx.github.io</code>，只有这样，将来要部署到GitHub page的时候，才会被识别，其中xxx就是你注册GitHub的用户名。<br><img src="/Hexo博客快速搭建教程/creat_repo.png" alt><br>填好以后，点击Create repository创建即可。</p>
 <h1 id="生成SSH添加到GitHub"><a href="#生成SSH添加到GitHub" class="headerlink" title="生成SSH添加到GitHub"></a>生成SSH添加到GitHub</h1><p>github每次pull/push代码时要求推送代码的用户是合法的，所以每次推送时候都要输入账号密码用以验证用户是否为合法用户，而ssh是一种安全的传输模式，可以代替用户的这一“输入账号密码”的行为来验证用户。<br>1.<strong>查看是否已经存在ssh秘钥</strong></p>
 <p>1&gt;打开git bash，输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">ls</span><br></pre></td></tr></table></figure></p>
 <ul>
@@ -386,13 +454,13 @@
 <li>-t 指定密钥类型，默认是 rsa ，可以省略。 </li>
 <li>-C 设置注释文字，比如邮箱。 </li>
 <li>-f 指定密钥文件存储文件名。 </li>
-<li>根据提示，需要指定文件位置和密码，如果是你足够放心，其实都可以直接回车，不需要什么密码。执行完以后，可在/c/Users/你的电脑用户名/.ssh/路径下看到刚生成的文件：id_rsa和id_rsa.pub。即公钥和私钥。<br><img src="/2019/03/31/Hexo博客快速搭建教程/ssh.png" alt></li>
+<li>根据提示，需要指定文件位置和密码，如果是你足够放心，其实都可以直接回车，不需要什么密码。执行完以后，可在/c/Users/你的电脑用户名/.ssh/路径下看到刚生成的文件：id_rsa和id_rsa.pub。即公钥和私钥。<br><img src="/Hexo博客快速搭建教程/ssh.png" alt></li>
 </ul>
 <p>ssh，简单来讲，就是一个秘钥，其中，id_rsa是你这台电脑的私人秘钥，不能给别人看的，id_rsa.pub是公共秘钥，可以随便给别人看。把这个公钥放在GitHub上，这样当你链接GitHub自己的账户时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过git上传你的文件到GitHub上。</p>
-<p>3&gt;在GitHub账户中添加公钥<br>在GitHub的setting中，找到SSH and GPG keys的设置选项，点击New SSH key<br>用记事本打开id_rsa.pub，把里面的信息复制进去，创建即可。<br><img src="/2019/03/31/Hexo博客快速搭建教程/ssh_setting.png" alt></p>
+<p>3&gt;在GitHub账户中添加公钥<br>在GitHub的setting中，找到SSH and GPG keys的设置选项，点击New SSH key<br>用记事本打开id_rsa.pub，把里面的信息复制进去，创建即可。<br><img src="/Hexo博客快速搭建教程/ssh_setting.png" alt></p>
 <p>在gitbash中，查看是否成功</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<p><img src="/2019/03/31/Hexo博客快速搭建教程/git_test.png" alt></p>
+<p><img src="/Hexo博客快速搭建教程/git_test.png" alt></p>
 <h1 id="将Hexo部署到GitHub"><a href="#将Hexo部署到GitHub" class="headerlink" title="将Hexo部署到GitHub"></a>将Hexo部署到GitHub</h1><p>这一步，我们就可以将hexo和GitHub关联起来，也就是将hexo生成的文章部署到GitHub上，用记事本或其他文本编辑软件打开站点配置文件 <code>_config.yml</code>，翻到最后，修改为<br>YourgithubName就是你的GitHub账户</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy: </span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/YourgithubName/YourgithubName.github.io.git </span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 <ul>
@@ -402,16 +470,16 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo generate </span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
 <p>其中<code>hexo clean</code>清除了你之前生成的东西，也可以不加。<br><code>hexo generate</code>顾名思义，生成静态文章，可以用 <code>hexo g</code>缩写<br><code>hexo deploy</code>部署文章，可以用<code>hexo d</code>缩写</p>
 <p>注意deploy时可能要你输入username和password。</p>
-<p>得到下图就说明部署成功了，过一会儿就可以在<code>http://yourname.github.io</code>这个网站看到你的博客了！！<br><img src="/2019/03/31/Hexo博客快速搭建教程/git_success.png" alt></p>
+<p>得到下图就说明部署成功了，过一会儿就可以在<code>http://yourname.github.io</code>这个网站看到你的博客了！！<br><img src="/Hexo博客快速搭建教程/git_success.png" alt></p>
 <h1 id="设置个人域名"><a href="#设置个人域名" class="headerlink" title="设置个人域名"></a>设置个人域名</h1><p>现在你的个人网站的地址是 <code>yourname.github.io</code>，如果觉得这个网址逼格不太够，这就需要你设置个人域名了。但是需要花钱。</p>
 <p>注册一个阿里云账户,在阿里云上买一个域名，我买的是<code>zhongchaocheng.top</code>，各个后缀的价格不太一样，比如最广泛的.com就比较贵，看个人喜好咯。</p>
 <p>你需要先去进行实名认证,然后在域名控制台中，看到你购买的域名。</p>
-<p>点<strong>解析</strong>进去，添加解析。<br><img src="/2019/03/31/Hexo博客快速搭建教程/jiexi.png" alt></p>
-<p>其中，192.30.252.153 和 192.30.252.154 是GitHub的服务器地址。<br><strong>注意，解析线路选择默认</strong><br><img src="/2019/03/31/Hexo博客快速搭建教程/jiexi_setting.png" alt><br>登录GitHub，进入之前创建的仓库，点击settings，设置Custom domain，输入你的域名<code>zhongchaocheng.top</code><br><img src="/2019/03/31/Hexo博客快速搭建教程/Custom%20domain.png" alt><br>点击<strong>Save</strong>保存</p>
-<p>然后在你的博客文件source中创建一个名为CNAME文件，不要后缀。写上你的域名。<br><img src="/2019/03/31/Hexo博客快速搭建教程/CNAME.png" alt><br>最后，在gitbash中，输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
+<p>点<strong>解析</strong>进去，添加解析。<br><img src="/Hexo博客快速搭建教程/jiexi.png" alt></p>
+<p><strong>注意，解析线路选择默认</strong><br><img src="/Hexo博客快速搭建教程/jiexi_setting.png" alt><br>登录GitHub，进入之前创建的仓库，点击settings，设置Custom domain，输入你的域名<code>zhongchaocheng.top</code><br><img src="/Hexo博客快速搭建教程/Custom%20domain.png" alt><br>点击<strong>Save</strong>保存</p>
+<p>然后在你的博客文件source中创建一个名为CNAME文件，不要后缀。写上你的域名。<br><img src="/Hexo博客快速搭建教程/CNAME.png" alt><br>最后，在gitbash中，输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
 <p>过不了多久，再打开你的浏览器，输入你自己的域名，就可以看到搭建的网站啦！</p>
 <h1 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h1><p>接下来你就可以正式开始写文章了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new newpapername</span><br></pre></td></tr></table></figure></p>
-<p>newpapername是你的文章名字<br>然后在source/_post中打开markdown文件，就可以开始编辑了。当你写完的时候，再<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
+<p>newpapername是你的文章名字，例如“Hello World”<br>然后在source/_post中打开markdown文件，就可以开始编辑了。当你写完的时候，再<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
 <p>就可以看到更新了。</p>
 <p><strong>到此为止，你的个人Hexo博客就算搭建成功了，当然这些只是实现了最基本的，其他还有hexo的基本配置，更换主题，实现多终端工作，以及在coding page部署实现国内外分流。这些操作在后面的博客里会介绍。</strong></p>
 
@@ -424,6 +492,35 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="七月的Leo 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="七月的Leo 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
@@ -431,7 +528,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
           
         </div>
       
@@ -440,6 +537,22 @@
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Hexo博客进阶玩法/" rel="prev" title="Hexo博客进阶玩法(草稿)">
+                Hexo博客进阶玩法(草稿) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -464,6 +577,11 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzUwMy8yMDA0Mw=="></div>
+    </div>
 
   
 
@@ -515,7 +633,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -537,13 +655,64 @@
           </nav>
 
           
-
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhongchaocheng" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
           
 
           
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.chuangzaoshi.com/code" title="创造狮导航" target="_blank">创造狮导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://e.xitu.io/" title="掘金酱" target="_blank">掘金酱</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.v2ex.com/" title="V2EX" target="_blank">V2EX</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.v2ex.com/" title="印记中文" target="_blank">印记中文</a>
+                  </li>
+                
+              </ul>
+            </div>
           
 
           
@@ -588,6 +757,15 @@
   <span class="author" itemprop="copyrightHolder">七月的Leo</span>
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">6.6k</span>
+  
 </div>
 
 
@@ -604,7 +782,31 @@
 
 
 
+<div class="theme-info">
+  <span class="post-count">Total Words:6.6k</span>
+</div>
+
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
 
 
 
@@ -746,6 +948,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

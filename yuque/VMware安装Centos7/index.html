@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux，VMware,虚拟机,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="进击的小超人" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Linux系统  前期准备 检查硬件因为是在宿主机上运行虚拟化软件安装centos，所以对宿主机的配置有一定的要求。最起码I5CPU双核、硬盘500G、内存4G以上。">
+<meta name="keywords" content="Linux，VMware,虚拟机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VMware安装Centos7">
+<meta property="og:url" content="https://zhongchaocheng.github.io/yuque/VMware安装Centos7/index.html">
+<meta property="og:site_name" content="进击的小超人">
+<meta property="og:description" content="Linux系统  前期准备 检查硬件因为是在宿主机上运行虚拟化软件安装centos，所以对宿主机的配置有一定的要求。最起码I5CPU双核、硬盘500G、内存4G以上。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555628210883-b1d23e74-e8fa-4ed4-890a-83634ad09749.png#align=left&display=inline&height=166&name=image.png&originHeight=166&originWidth=686&size=14879&status=done&width=686">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555625805244-647b7d15-2725-4afa-8123-39c6a0d840e5.png#align=left&display=inline&height=567&name=image.png&originHeight=667&originWidth=877&size=48505&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555674237240-57d6486a-6e62-4331-9f24-80d629b2adf5.png#align=left&display=inline&height=559&name=image.png&originHeight=752&originWidth=1004&size=80407&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555674386012-474a9dba-60b5-4528-83ae-5c1475e68196.png#align=left&display=inline&height=559&name=image.png&originHeight=752&originWidth=1004&size=111286&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555674483376-9c200d53-3d22-4ac2-83f8-57db8329655f.png#align=left&display=inline&height=551&name=image.png&originHeight=551&originWidth=570&size=26774&status=done&width=570">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555674519525-731c57bf-a46d-4f61-8fd4-d2db3c0f4cd4.png#align=left&display=inline&height=559&name=image.png&originHeight=752&originWidth=1004&size=87049&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555674578593-a2897ee9-32dd-448f-9e60-9f929702c5a6.png#align=left&display=inline&height=559&name=image.png&originHeight=752&originWidth=1004&size=82748&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555674736015-4b2022a1-d660-4d6f-87b4-70003979e6f5.png#align=left&display=inline&height=559&name=image.png&originHeight=752&originWidth=1004&size=77548&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555674782386-1bef8f56-ec5b-45d6-a6cc-f6f3e05a50cd.png#align=left&display=inline&height=559&name=image.png&originHeight=752&originWidth=1004&size=76939&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555674854427-839f5f17-cc2a-4b69-89e8-a4628e2874fe.png#align=left&display=inline&height=559&name=image.png&originHeight=752&originWidth=1004&size=92508&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555674905135-b65698ed-0d3d-474d-81d6-980aa90099f7.png#align=left&display=inline&height=285&name=image.png&originHeight=332&originWidth=869&size=89694&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555716244383-05381e8b-18bf-466e-8c07-6c49372cc65a.png#align=left&display=inline&height=559&name=image.png&originHeight=752&originWidth=1004&size=86857&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555716269320-6e44a91d-6343-4a59-9046-00037ba4fbff.png#align=left&display=inline&height=559&name=image.png&originHeight=752&originWidth=1004&size=80950&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555716279838-31e8c103-f9a0-4224-b370-ce3cb2aa83ce.png#align=left&display=inline&height=559&name=image.png&originHeight=752&originWidth=1004&size=77061&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555716348090-6207a7a5-4e5d-446a-9b49-0ec6dae5f61a.png#align=left&display=inline&height=559&name=image.png&originHeight=752&originWidth=1004&size=85241&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555716361339-4e1f0b89-ee1a-4f6e-ad1d-4f34b2f1d35b.png#align=left&display=inline&height=559&name=image.png&originHeight=752&originWidth=1004&size=89384&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555716405379-23cff4c1-b533-4218-9ec3-fd4e3665a8b4.png#align=left&display=inline&height=559&name=image.png&originHeight=752&originWidth=1004&size=78029&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555716447861-c6705d69-7ec2-47c4-94c0-a37dcc958fae.png#align=left&display=inline&height=559&name=image.png&originHeight=752&originWidth=1004&size=87289&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555716554405-3150bfe4-77d4-4a07-9a82-f06bddf203d1.png#align=left&display=inline&height=795&name=image.png&originHeight=916&originWidth=860&size=37558&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555716637494-c0cab436-13c3-4595-910f-24aad477bc4d.png#align=left&display=inline&height=559&name=image.png&originHeight=752&originWidth=1004&size=85465&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555717009295-22735b78-ebdd-4f1a-af94-e19b02e86142.png#align=left&display=inline&height=559&name=image.png&originHeight=752&originWidth=1004&size=106110&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555717088930-6989ae4f-ab2b-4501-9c8e-c8b18c9e7217.png#align=left&display=inline&height=815&name=image.png&originHeight=939&originWidth=860&size=49455&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555717125046-cc8791b6-bf66-4abb-b3a5-4d20bf4bed96.png#align=left&display=inline&height=559&name=image.png&originHeight=752&originWidth=1004&size=100206&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555717185487-10212a56-4342-4ff5-9481-ee884da7bc47.png#align=left&display=inline&height=625&name=image.png&originHeight=707&originWidth=844&size=54378&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555717380305-74700ccc-fa26-471a-ae88-16b40d9a78ff.png#align=left&display=inline&height=614&name=image.png&originHeight=827&originWidth=1004&size=169225&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555717453111-97421d0d-f45d-4e00-bc7d-59e4387c4c1b.png#align=left&display=inline&height=614&name=image.png&originHeight=827&originWidth=1004&size=202734&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555717589839-462c7b5f-9958-48b7-999d-457a5b109f20.png#align=left&display=inline&height=614&name=image.png&originHeight=827&originWidth=1004&size=209884&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555717625911-a07762d5-96b2-4001-bb59-031be58263da.png#align=left&display=inline&height=614&name=image.png&originHeight=827&originWidth=1004&size=242516&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555717800963-439ea882-d5de-4332-91be-44d913cb1d62.png#align=left&display=inline&height=614&name=image.png&originHeight=827&originWidth=1004&size=213900&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555717999874-55865335-75a4-417c-a13e-b41acee98ee7.png#align=left&display=inline&height=614&name=image.png&originHeight=827&originWidth=1004&size=188927&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555717955081-f0f16d24-9fcb-4f42-83cd-732a52200183.png#align=left&display=inline&height=614&name=image.png&originHeight=827&originWidth=1004&size=189189&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555718140543-6aa4dfb8-59e5-430d-ade0-b6b56e29bbc3.png#align=left&display=inline&height=614&name=image.png&originHeight=827&originWidth=1004&size=205318&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555718197606-32df0cef-f1b8-4b7b-acc6-c42f7f3d34fe.png#align=left&display=inline&height=614&name=image.png&originHeight=827&originWidth=1004&size=154598&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555718269183-35887d5a-85cc-4c02-9986-6af487e9802c.png#align=left&display=inline&height=614&name=image.png&originHeight=827&originWidth=1004&size=207829&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555718307955-06930fb1-f22f-4b2e-aefe-d17194028a26.png#align=left&display=inline&height=614&name=image.png&originHeight=827&originWidth=1004&size=123865&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555718407804-2eab90d7-3f24-4dd8-8a7f-bb7443595b06.png#align=left&display=inline&height=614&name=image.png&originHeight=827&originWidth=1004&size=133328&status=done&width=746">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555718457572-4c605977-efe1-4fef-a1de-3dbf77109179.png#align=left&display=inline&height=614&name=image.png&originHeight=827&originWidth=1004&size=249627&status=done&width=746">
+<meta property="og:updated_time" content="2019-04-22T03:30:02.055Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="VMware安装Centos7">
+<meta name="twitter:description" content="Linux系统  前期准备 检查硬件因为是在宿主机上运行虚拟化软件安装centos，所以对宿主机的配置有一定的要求。最起码I5CPU双核、硬盘500G、内存4G以上。">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1555628210883-b1d23e74-e8fa-4ed4-890a-83634ad09749.png#align=left&display=inline&height=166&name=image.png&originHeight=166&originWidth=686&size=14879&status=done&width=686">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://zhongchaocheng.github.io/yuque/VMware安装Centos7/">
+
+
+
+
+
+  <title>VMware安装Centos7 | 进击的小超人</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">进击的小超人</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">记录生活，记录思考</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhongchaocheng.github.io/yuque/VMware安装Centos7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="七月的Leo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="进击的小超人">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">VMware安装Centos7</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-19T06:13:36+08:00">
+                2019-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux-centos/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux_centos</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.3k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Linux系统</p>
+<p><a name="3bb3d3ad"></a></p>
+<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><p><a name="b349681e"></a></p>
+<h2 id="检查硬件"><a href="#检查硬件" class="headerlink" title="检查硬件"></a>检查硬件</h2><p>因为是在宿主机上运行虚拟化软件安装centos，所以对宿主机的配置有一定的要求。最起码I5CPU双核、硬盘500G、内存4G以上。<br><br><br><a id="more"></a></p>
+<p>下面是我的笔记本配置：<br><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555628210883-b1d23e74-e8fa-4ed4-890a-83634ad09749.png#align=left&amp;display=inline&amp;height=166&amp;name=image.png&amp;originHeight=166&amp;originWidth=686&amp;size=14879&amp;status=done&amp;width=686" alt="image.png"><br>满足要求，那就开始安装VM吧。</p>
+<p><a name="VMware"></a></p>
+<h2 id="VMware"><a href="#VMware" class="headerlink" title="VMware"></a>VMware</h2><p>VMware Workstation 简体中文版是深受全球用户信赖并屡获殊荣的虚拟机软件。它拥有历经了十多年验证的工程设计，可以在单台PC上运行多个、多平台、多层面的操作系统与应用程序。并且支持快照和克隆，支持物理机与虚拟机间复制、移动，交换文件，支持USB设备及打印，支持多种接入互联网的方式，使用VMware Workstation 安装的系统，你完全可以像使用物理机一样来使用它！最新版本的VMware Workstation加入了对Windows 8的支持！<br><br><br>VMware Workstation Pro「15.0.4」中文精简已注册版<br>下载链接：<br><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555625805244-647b7d15-2725-4afa-8123-39c6a0d840e5.png#align=left&amp;display=inline&amp;height=567&amp;name=image.png&amp;originHeight=667&amp;originWidth=877&amp;size=48505&amp;status=done&amp;width=746" alt="image.png"></p>
+<p><a name="Centos"></a></p>
+<h2 id="Centos"><a href="#Centos" class="headerlink" title="Centos"></a>Centos</h2><p>如果没有镜像的话，可以去官网下载：<br><a href="http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso" target="_blank" rel="noopener">http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso</a></p>
+<p>镜像下载好以后就可以打开VM安装镜像了。</p>
+<p><a name="e46e04d5"></a></p>
+<h1 id="创建虚拟机"><a href="#创建虚拟机" class="headerlink" title="创建虚拟机"></a>创建虚拟机</h1><ul>
+<li>打开安装好的VM，选择创建新的虚拟机。</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555674237240-57d6486a-6e62-4331-9f24-80d629b2adf5.png#align=left&amp;display=inline&amp;height=559&amp;name=image.png&amp;originHeight=752&amp;originWidth=1004&amp;size=80407&amp;status=done&amp;width=746" alt="image.png"></p>
+<p><a name="54509ad2"></a></p>
+<h2 id="典型安装与自定义安装"><a href="#典型安装与自定义安装" class="headerlink" title="典型安装与自定义安装"></a>典型安装与自定义安装</h2><p>典型安装：VMwear会将主流的配置应用在虚拟机的操作系统上，对于新手来很友好。<br>自定义安装：自定义安装可以针对性的把一些资源加强，把不需要的资源移除。避免资源的浪费。<br>这里我选择自定义安装。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555674386012-474a9dba-60b5-4528-83ae-5c1475e68196.png#align=left&amp;display=inline&amp;height=559&amp;name=image.png&amp;originHeight=752&amp;originWidth=1004&amp;size=111286&amp;status=done&amp;width=746" alt="image.png"><br></p>
+<p><a name="0ddd3f43"></a></p>
+<h2 id="虚拟机兼容性选择"><a href="#虚拟机兼容性选择" class="headerlink" title="虚拟机兼容性选择"></a>虚拟机兼容性选择</h2><p>这里要注意兼容性，如果是VMwear15创建的虚拟机复制到更低的版本可能会出现一不兼容的现象。如果是用低版本创建的虚拟机在VMwear15中打开则不会出现兼容性问题。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555674483376-9c200d53-3d22-4ac2-83f8-57db8329655f.png#align=left&amp;display=inline&amp;height=551&amp;name=image.png&amp;originHeight=551&amp;originWidth=570&amp;size=26774&amp;status=done&amp;width=570" alt="image.png"></p>
+<p><a name="1087f6b3"></a></p>
+<h2 id="选择稍后安装操作系统"><a href="#选择稍后安装操作系统" class="headerlink" title="选择稍后安装操作系统"></a>选择稍后安装操作系统</h2><p><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555674519525-731c57bf-a46d-4f61-8fd4-d2db3c0f4cd4.png#align=left&amp;display=inline&amp;height=559&amp;name=image.png&amp;originHeight=752&amp;originWidth=1004&amp;size=87049&amp;status=done&amp;width=746" alt="image.png"></p>
+<p><a name="e317beed"></a></p>
+<h2 id="操作系统的选择"><a href="#操作系统的选择" class="headerlink" title="操作系统的选择"></a>操作系统的选择</h2><p>这里选择之后安装的操作系统，正确的选择会让vm tools更好的兼容。这里选择linux下的CentOS</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555674578593-a2897ee9-32dd-448f-9e60-9f929702c5a6.png#align=left&amp;display=inline&amp;height=559&amp;name=image.png&amp;originHeight=752&amp;originWidth=1004&amp;size=82748&amp;status=done&amp;width=746" alt="image.png"></p>
+<p><a name="7bdc5e89"></a></p>
+<h2 id="虚拟机位置与命名"><a href="#虚拟机位置与命名" class="headerlink" title="虚拟机位置与命名"></a>虚拟机位置与命名</h2><p>虚拟机名称就是一个名字，在虚拟机多的时候方便自己找到。<br>VMwear的默认位置是在C盘下，我这里改成G盘。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555674736015-4b2022a1-d660-4d6f-87b4-70003979e6f5.png#align=left&amp;display=inline&amp;height=559&amp;name=image.png&amp;originHeight=752&amp;originWidth=1004&amp;size=77548&amp;status=done&amp;width=746" alt="image.png"></p>
+<p><a name="1cabb64a"></a></p>
+<h2 id="处理器与内存的分配"><a href="#处理器与内存的分配" class="headerlink" title="处理器与内存的分配"></a>处理器与内存的分配</h2><p>处理器分配要根据自己的实际需求来分配。在使用过程中CPU不够的话是可以再增加的。这次只做安装CentOS演示，所以处理器与核心都选1.<br><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555674782386-1bef8f56-ec5b-45d6-a6cc-f6f3e05a50cd.png#align=left&amp;display=inline&amp;height=559&amp;name=image.png&amp;originHeight=752&amp;originWidth=1004&amp;size=76939&amp;status=done&amp;width=746" alt="image.png"></p>
+<p>内存也是要根据实际的需求分配。我的宿主机内存是8G所以我给虚拟机分配2G内存。<br><br><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555674854427-839f5f17-cc2a-4b69-89e8-a4628e2874fe.png#align=left&amp;display=inline&amp;height=559&amp;name=image.png&amp;originHeight=752&amp;originWidth=1004&amp;size=92508&amp;status=done&amp;width=746" alt="image.png"></p>
+<p><a name="ef842bfd"></a></p>
+<h2 id="网络连接类型的选择"><a href="#网络连接类型的选择" class="headerlink" title="网络连接类型的选择"></a>网络连接类型的选择</h2><p>网络连接类型一共有桥接、NAT、仅主机和不联网四种。</p>
+<p>桥接：选择桥接模式的话虚拟机和宿主机在网络上就是平级的关系，相当于连接在同一交换机上。<br>NAT：NAT模式就是虚拟机要联网得先通过宿主机才能和外面进行通信。<br>仅主机：虚拟机与宿主机直接连起来<br>桥接与NAT模式访问互联网过程，如下图所示：<br><br><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555674905135-b65698ed-0d3d-474d-81d6-980aa90099f7.png#align=left&amp;display=inline&amp;height=285&amp;name=image.png&amp;originHeight=332&amp;originWidth=869&amp;size=89694&amp;status=done&amp;width=746" alt="image.png"></p>
+<ul>
+<li>这里选择桥接模式</li>
+</ul>
+<p><br><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555716244383-05381e8b-18bf-466e-8c07-6c49372cc65a.png#align=left&amp;display=inline&amp;height=559&amp;name=image.png&amp;originHeight=752&amp;originWidth=1004&amp;size=86857&amp;status=done&amp;width=746" alt="image.png"><br><br></p>
+<ul>
+<li>其余两项按虚拟机默认选项即可</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555716269320-6e44a91d-6343-4a59-9046-00037ba4fbff.png#align=left&amp;display=inline&amp;height=559&amp;name=image.png&amp;originHeight=752&amp;originWidth=1004&amp;size=80950&amp;status=done&amp;width=746" alt="image.png"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555716279838-31e8c103-f9a0-4224-b370-ce3cb2aa83ce.png#align=left&amp;display=inline&amp;height=559&amp;name=image.png&amp;originHeight=752&amp;originWidth=1004&amp;size=77061&amp;status=done&amp;width=746" alt="image.png"></p>
+<ul>
+<li>这一步选择创建虚拟磁盘</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555716348090-6207a7a5-4e5d-446a-9b49-0ec6dae5f61a.png#align=left&amp;display=inline&amp;height=559&amp;name=image.png&amp;originHeight=752&amp;originWidth=1004&amp;size=85241&amp;status=done&amp;width=746" alt="image.png"><br></p>
+<p><a name="8546bdcf"></a></p>
+<h2 id="磁盘容量"><a href="#磁盘容量" class="headerlink" title="磁盘容量"></a>磁盘容量</h2><p>磁盘容量暂时分配30G即可后期可以随时增加，不要勾选立即分配所有磁盘，否则虚拟机会将100G直接分配给CentOS，会导致宿主机所剩硬盘容量减少。<br>勾选将虚拟磁盘拆分成多个文件，这样可以使虚拟机方便用储存设备拷贝复制。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555716361339-4e1f0b89-ee1a-4f6e-ad1d-4f34b2f1d35b.png#align=left&amp;display=inline&amp;height=559&amp;name=image.png&amp;originHeight=752&amp;originWidth=1004&amp;size=89384&amp;status=done&amp;width=746" alt="image.png"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555716405379-23cff4c1-b533-4218-9ec3-fd4e3665a8b4.png#align=left&amp;display=inline&amp;height=559&amp;name=image.png&amp;originHeight=752&amp;originWidth=1004&amp;size=78029&amp;status=done&amp;width=746" alt="image.png"></p>
+<ul>
+<li>取消不需要的硬件</li>
+</ul>
+<p>点击自定义硬件<br><br><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555716447861-c6705d69-7ec2-47c4-94c0-a37dcc958fae.png#align=left&amp;display=inline&amp;height=559&amp;name=image.png&amp;originHeight=752&amp;originWidth=1004&amp;size=87289&amp;status=done&amp;width=746" alt="image.png"></p>
+<p>选择声卡、打印机等不需要的硬件然后移除。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555716554405-3150bfe4-77d4-4a07-9a82-f06bddf203d1.png#align=left&amp;display=inline&amp;height=795&amp;name=image.png&amp;originHeight=916&amp;originWidth=860&amp;size=37558&amp;status=done&amp;width=746" alt="image.png"></p>
+<p>点击完成，已经创建好虚拟机。<br><br><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555716637494-c0cab436-13c3-4595-910f-24aad477bc4d.png#align=left&amp;display=inline&amp;height=559&amp;name=image.png&amp;originHeight=752&amp;originWidth=1004&amp;size=85465&amp;status=done&amp;width=746" alt="image.png"><br><br><br><a name="04a4e9e2"></a></p>
+<h1 id="安装Centos"><a href="#安装Centos" class="headerlink" title="安装Centos"></a>安装Centos</h1><p><a name="3f872e7c"></a></p>
+<h2 id="连接光盘"><a href="#连接光盘" class="headerlink" title="连接光盘"></a>连接光盘</h2><p>右击刚创建的虚拟机，选择设置<br><br><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555717009295-22735b78-ebdd-4f1a-af94-e19b02e86142.png#align=left&amp;display=inline&amp;height=559&amp;name=image.png&amp;originHeight=752&amp;originWidth=1004&amp;size=106110&amp;status=done&amp;width=746" alt="image.png"><br><br>先选择CD/DVD，再选择使用ISO映像文件，最后选择浏览找到下载好的镜像文件。启动时连接一定要勾选上后确定。<br><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555717088930-6989ae4f-ab2b-4501-9c8e-c8b18c9e7217.png#align=left&amp;display=inline&amp;height=815&amp;name=image.png&amp;originHeight=939&amp;originWidth=860&amp;size=49455&amp;status=done&amp;width=746" alt="image.png"></p>
+<p><a name="d23f6171"></a></p>
+<h2 id="开启虚拟机"><a href="#开启虚拟机" class="headerlink" title="开启虚拟机"></a>开启虚拟机</h2><p><br><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555717125046-cc8791b6-bf66-4abb-b3a5-4d20bf4bed96.png#align=left&amp;display=inline&amp;height=559&amp;name=image.png&amp;originHeight=752&amp;originWidth=1004&amp;size=100206&amp;status=done&amp;width=746" alt="image.png"><br><br><br><a name="74ec6210"></a></p>
+<h2 id="安装操作系统"><a href="#安装操作系统" class="headerlink" title="安装操作系统"></a>安装操作系统</h2><p>开启虚拟机后会出现以下界面</p>
+<ol>
+<li>Install CentOS 7 安装CentOS 7</li>
+<li>Test this media &amp; install CentOS 7 测试安装文件并安装CentOS 7</li>
+<li>Troubleshooting 修复故障</li>
+</ol>
+<p>选择第一项，安装直接CentOS 7，回车<br><br><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555717185487-10212a56-4342-4ff5-9481-ee884da7bc47.png#align=left&amp;display=inline&amp;height=625&amp;name=image.png&amp;originHeight=707&amp;originWidth=844&amp;size=54378&amp;status=done&amp;width=746" alt="image.png"></p>
+<p>进入下面的界面<br><br><br><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555717380305-74700ccc-fa26-471a-ae88-16b40d9a78ff.png#align=left&amp;display=inline&amp;height=614&amp;name=image.png&amp;originHeight=827&amp;originWidth=1004&amp;size=169225&amp;status=done&amp;width=746" alt="image.png"></p>
+<p>选择安装过程中使用的语言，这里选择简体中文、键盘选择美式键盘。点击继续<br><br><br><br><br><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555717453111-97421d0d-f45d-4e00-bc7d-59e4387c4c1b.png#align=left&amp;display=inline&amp;height=614&amp;name=image.png&amp;originHeight=827&amp;originWidth=1004&amp;size=202734&amp;status=done&amp;width=746" alt="image.png"></p>
+<p><a name="7974a9cc"></a></p>
+<h2 id="设置时区"><a href="#设置时区" class="headerlink" title="设置时区"></a>设置时区</h2><p>这里我的默认了亚洲/上海时区，就不需要设置了。</p>
+<p><a name="e4c358fc"></a></p>
+<h2 id="选择需要安装的软件"><a href="#选择需要安装的软件" class="headerlink" title="选择需要安装的软件"></a>选择需要安装的软件</h2><p><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555717589839-462c7b5f-9958-48b7-999d-457a5b109f20.png#align=left&amp;display=inline&amp;height=614&amp;name=image.png&amp;originHeight=827&amp;originWidth=1004&amp;size=209884&amp;status=done&amp;width=746" alt="image.png"></p>
+<p>选择带GUI的服务器<br><br><br><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555717625911-a07762d5-96b2-4001-bb59-031be58263da.png#align=left&amp;display=inline&amp;height=614&amp;name=image.png&amp;originHeight=827&amp;originWidth=1004&amp;size=242516&amp;status=done&amp;width=746" alt="image.png"></p>
+<p><br><br>选择安装位置，在这里可以进行磁盘划分。<br><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555717800963-439ea882-d5de-4332-91be-44d913cb1d62.png#align=left&amp;display=inline&amp;height=614&amp;name=image.png&amp;originHeight=827&amp;originWidth=1004&amp;size=213900&amp;status=done&amp;width=746" alt="image.png"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555717999874-55865335-75a4-417c-a13e-b41acee98ee7.png#align=left&amp;display=inline&amp;height=614&amp;name=image.png&amp;originHeight=827&amp;originWidth=1004&amp;size=188927&amp;status=done&amp;width=746" alt="image.png"><br><br>点击自动添加分区，然后看情况修改分区大小，点击完成，进入下面界面</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555717955081-f0f16d24-9fcb-4f42-83cd-732a52200183.png#align=left&amp;display=inline&amp;height=614&amp;name=image.png&amp;originHeight=827&amp;originWidth=1004&amp;size=189189&amp;status=done&amp;width=746" alt="image.png"><br>点击接受修改。</p>
+<p><a name="49d0ddb9"></a></p>
+<h2 id="设置主机名与网卡信息"><a href="#设置主机名与网卡信息" class="headerlink" title="设置主机名与网卡信息"></a>设置主机名与网卡信息</h2><p><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555718140543-6aa4dfb8-59e5-430d-ade0-b6b56e29bbc3.png#align=left&amp;display=inline&amp;height=614&amp;name=image.png&amp;originHeight=827&amp;originWidth=1004&amp;size=205318&amp;status=done&amp;width=746" alt="image.png"><br></p>
+<p>打开网卡，然后设置你的主机名，然后点击完成<br><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555718197606-32df0cef-f1b8-4b7b-acc6-c42f7f3d34fe.png#align=left&amp;display=inline&amp;height=614&amp;name=image.png&amp;originHeight=827&amp;originWidth=1004&amp;size=154598&amp;status=done&amp;width=746" alt="image.png"></p>
+<p>最后选择开始安装<br><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555718269183-35887d5a-85cc-4c02-9986-6af487e9802c.png#align=left&amp;display=inline&amp;height=614&amp;name=image.png&amp;originHeight=827&amp;originWidth=1004&amp;size=207829&amp;status=done&amp;width=746" alt="image.png"></p>
+<p><a name="e78a51c6"></a></p>
+<h2 id="设置root密码"><a href="#设置root密码" class="headerlink" title="设置root密码"></a>设置root密码</h2><p><strong><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555718307955-06930fb1-f22f-4b2e-aefe-d17194028a26.png#align=left&amp;display=inline&amp;height=614&amp;name=image.png&amp;originHeight=827&amp;originWidth=1004&amp;size=123865&amp;status=done&amp;width=746" alt="image.png"></strong></p>
+<p><a name="b2580b2a"></a></p>
+<h2 id="创建管理员用户"><a href="#创建管理员用户" class="headerlink" title="创建管理员用户"></a>创建管理员用户</h2><p>点击创建用户，创建管理员用户<br><strong><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555718407804-2eab90d7-3f24-4dd8-8a7f-bb7443595b06.png#align=left&amp;display=inline&amp;height=614&amp;name=image.png&amp;originHeight=827&amp;originWidth=1004&amp;size=133328&amp;status=done&amp;width=746" alt="image.png"></strong></p>
+<p>等待系统安装完毕重启系统即可<br><br><br><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1555718457572-4c605977-efe1-4fef-a1de-3dbf77109179.png#align=left&amp;display=inline&amp;height=614&amp;name=image.png&amp;originHeight=827&amp;originWidth=1004&amp;size=249627&amp;status=done&amp;width=746" alt="image.png"></p>
+<p>参考资料：<br><a href="https://blog.csdn.net/babyxue/article/details/80970526" target="_blank" rel="noopener">https://blog.csdn.net/babyxue/article/details/80970526</a></p>
+
+      
+    </div>
+    
+    
+    
+	
+	<div>
+      
+        
+      
+	</div>
+    
+	  <div>
+		
+		<div>
+    
+        <div style="text-align:center;color: #555;font-size:14px;">-------------The End-------------</div>
+    
+</div>
+		
+	  </div>
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="七月的Leo 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="七月的Leo 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux，VMware/" rel="tag"><i class="fa fa-tag"></i> Linux，VMware</a>
+          
+            <a href="/tags/虚拟机/" rel="tag"><i class="fa fa-tag"></i> 虚拟机</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/yuque/使用语雀来编辑博客文章/" rel="next" title="使用语雀来编辑博客文章">
+                <i class="fa fa-chevron-left"></i> 使用语雀来编辑博客文章
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/yuque/《权利的游戏》第八季资源分享/" rel="prev" title="《权利的游戏》第八季资源分享">
+                《权利的游戏》第八季资源分享 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cadf2f8d7285698" async="async"></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzUwMy8yMDA0Mw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpeg" alt="七月的Leo">
+            
+              <p class="site-author-name" itemprop="name">七月的Leo</p>
+              <p class="site-description motion-element" itemprop="description">I'm superman,but can't fly.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhongchaocheng" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+		
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.apachecn.org/" title="ApacheCN" target="_blank">ApacheCN</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+		  </div>
+		<!-- 音乐播放器-->
+		<div>
+			
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=0&id=2736125859&auto=0&height=32"></iframe>
+			
+		</div>
+          
+
+        </div>
+
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前期准备"><span class="nav-number">1.</span> <span class="nav-text">前期准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#检查硬件"><span class="nav-number">1.1.</span> <span class="nav-text">检查硬件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VMware"><span class="nav-number">1.2.</span> <span class="nav-text">VMware</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Centos"><span class="nav-number">1.3.</span> <span class="nav-text">Centos</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建虚拟机"><span class="nav-number">2.</span> <span class="nav-text">创建虚拟机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#典型安装与自定义安装"><span class="nav-number">2.1.</span> <span class="nav-text">典型安装与自定义安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟机兼容性选择"><span class="nav-number">2.2.</span> <span class="nav-text">虚拟机兼容性选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择稍后安装操作系统"><span class="nav-number">2.3.</span> <span class="nav-text">选择稍后安装操作系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作系统的选择"><span class="nav-number">2.4.</span> <span class="nav-text">操作系统的选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟机位置与命名"><span class="nav-number">2.5.</span> <span class="nav-text">虚拟机位置与命名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理器与内存的分配"><span class="nav-number">2.6.</span> <span class="nav-text">处理器与内存的分配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络连接类型的选择"><span class="nav-number">2.7.</span> <span class="nav-text">网络连接类型的选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#磁盘容量"><span class="nav-number">2.8.</span> <span class="nav-text">磁盘容量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Centos"><span class="nav-number">3.</span> <span class="nav-text">安装Centos</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#连接光盘"><span class="nav-number">3.1.</span> <span class="nav-text">连接光盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启虚拟机"><span class="nav-number">3.2.</span> <span class="nav-text">开启虚拟机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装操作系统"><span class="nav-number">3.3.</span> <span class="nav-text">安装操作系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置时区"><span class="nav-number">3.4.</span> <span class="nav-text">设置时区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择需要安装的软件"><span class="nav-number">3.5.</span> <span class="nav-text">选择需要安装的软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置主机名与网卡信息"><span class="nav-number">3.6.</span> <span class="nav-text">设置主机名与网卡信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置root密码"><span class="nav-number">3.7.</span> <span class="nav-text">设置root密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建管理员用户"><span class="nav-number">3.8.</span> <span class="nav-text">创建管理员用户</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+ 
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">七月的Leo</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">5.6k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <span class="post-count">Total Words:5.6k</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

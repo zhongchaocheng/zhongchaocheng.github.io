@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="git,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="进击的小超人" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="本文以配置2个不同的github.comGit多账号支持管理多个ssh-key，对git多一分了解。　　备注：cmd，Git Bash用管理员身份运行程序。">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Win10下Git 多账号配置">
+<meta property="og:url" content="https://zhongchaocheng.github.io/yuque/Win10下Git 多账号配置/index.html">
+<meta property="og:site_name" content="进击的小超人">
+<meta property="og:description" content="本文以配置2个不同的github.comGit多账号支持管理多个ssh-key，对git多一分了解。　　备注：cmd，Git Bash用管理员身份运行程序。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1557969534180-9e86511a-0dc4-4c6a-b953-b4955fa8a9a9.png#align=left&display=inline&height=419&name=image.png&originHeight=377&originWidth=595&size=36066&status=done&width=661.1111286245751">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1557969827976-eb009924-9331-4331-9bb4-1b050f0a9cf3.png#align=left&display=inline&height=419&name=image.png&originHeight=377&originWidth=595&size=33280&status=done&width=661.1111286245751">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1557969956113-fcef3aa3-e797-48f9-9b1b-6228e08754ad.png#align=left&display=inline&height=551&name=image.png&originHeight=496&originWidth=452&size=49096&status=done&width=502.222235526568">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1557970151709-f332ca34-dc5f-4bcc-b00e-90b8b8c0b7df.png#align=left&display=inline&height=254&name=image.png&originHeight=229&originWidth=714&size=21488&status=done&width=793.3333543494902">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1557970415673-5e9fe1e6-aab3-4ac4-8a51-611a2862e3d8.png#align=left&display=inline&height=521&name=image.png&originHeight=469&originWidth=1071&size=58790&status=done&width=1190.0000315242353">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1557971704685-32fb36d2-f710-40cb-a3b3-34d45dce7120.png#align=left&display=inline&height=276&name=image.png&originHeight=248&originWidth=582&size=24673&status=done&width=646.6666837974835">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1557972381175-81389574-487d-4ce7-8e22-817f4d7819bf.png#align=left&display=inline&height=312&name=image.png&originHeight=281&originWidth=579&size=36566&status=done&width=643.333350375847">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1557976439878-a44ffd7a-a194-4c2e-a1b2-7ef7a092299b.png#align=left&display=inline&height=81&name=image.png&originHeight=73&originWidth=565&size=6534&status=done&width=627.77779440821">
+<meta property="og:updated_time" content="2019-05-16T08:51:24.647Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Win10下Git 多账号配置">
+<meta name="twitter:description" content="本文以配置2个不同的github.comGit多账号支持管理多个ssh-key，对git多一分了解。　　备注：cmd，Git Bash用管理员身份运行程序。">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2019/png/316012/1557969534180-9e86511a-0dc4-4c6a-b953-b4955fa8a9a9.png#align=left&display=inline&height=419&name=image.png&originHeight=377&originWidth=595&size=36066&status=done&width=661.1111286245751">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://zhongchaocheng.github.io/yuque/Win10下Git 多账号配置/">
+
+
+
+
+
+  <title>Win10下Git 多账号配置 | 进击的小超人</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">进击的小超人</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">记录生活，记录思考</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhongchaocheng.github.io/yuque/Win10下Git 多账号配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="七月的Leo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="进击的小超人">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Win10下Git 多账号配置</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-16T09:12:07+08:00">
+                2019-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git使用/" itemprop="url" rel="index">
+                    <span itemprop="name">git使用</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  610 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>本文以配置2个不同的<strong>github.com</strong>Git多账号支持<strong>管理多个ssh-key</strong>，对git多一分了解。<br><strong>　　备注：</strong>cmd，Git Bash<strong>用管理员身份运行程序。</strong></p>
+</blockquote>
+<a id="more"></a>
+<p><a name="dB5Jt"></a></p>
+<h2 id="1-生成github-com第一个帐号对应的私钥公钥"><a href="#1-生成github-com第一个帐号对应的私钥公钥" class="headerlink" title="1.生成github.com第一个帐号对应的私钥公钥"></a>1.生成github.com第一个帐号对应的私钥公钥</h2><p>执行命令 <code>**ssh-keygen -t rsa -C email**</code><strong> </strong>创建github对应的sshkey，命名为<strong>id_rsa_你的自定义名字</strong>，这里我取的是<strong>id_rsa_zcc，</strong>后面后面是输入提交修改时的密码，可以直接回车跳过。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C xxx@xx.com</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1557969534180-9e86511a-0dc4-4c6a-b953-b4955fa8a9a9.png#align=left&amp;display=inline&amp;height=419&amp;name=image.png&amp;originHeight=377&amp;originWidth=595&amp;size=36066&amp;status=done&amp;width=661.1111286245751" alt="image.png"></p>
+<p><a name="65M6L"></a></p>
+<h2 id="2-同样的方式再生成第二个帐号对应的私钥公钥"><a href="#2-同样的方式再生成第二个帐号对应的私钥公钥" class="headerlink" title="2.同样的方式再生成第二个帐号对应的私钥公钥"></a>2.同样的方式再生成第二个帐号对应的私钥公钥</h2><p><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1557969827976-eb009924-9331-4331-9bb4-1b050f0a9cf3.png#align=left&amp;display=inline&amp;height=419&amp;name=image.png&amp;originHeight=377&amp;originWidth=595&amp;size=33280&amp;status=done&amp;width=661.1111286245751" alt="image.png"></p>
+<p><a name="ioYYa"></a></p>
+<h2 id="3-把上面得到的文件拷贝到git默认访问的-ssh目录"><a href="#3-把上面得到的文件拷贝到git默认访问的-ssh目录" class="headerlink" title="3. 把上面得到的文件拷贝到git默认访问的.ssh目录"></a>3. 把上面得到的文件拷贝到git默认访问的.ssh目录</h2><p>进入你的用户目录，找到刚才生成的4个文件，新建一个.ssh目录，把这四个文件拷贝进去(本文C:\Users\75250.ssh）</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1557969956113-fcef3aa3-e797-48f9-9b1b-6228e08754ad.png#align=left&amp;display=inline&amp;height=551&amp;name=image.png&amp;originHeight=496&amp;originWidth=452&amp;size=49096&amp;status=done&amp;width=502.222235526568" alt="image.png"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1557970151709-f332ca34-dc5f-4bcc-b00e-90b8b8c0b7df.png#align=left&amp;display=inline&amp;height=254&amp;name=image.png&amp;originHeight=229&amp;originWidth=714&amp;size=21488&amp;status=done&amp;width=793.3333543494902" alt="image.png"></p>
+<p><a name="vmnqG"></a></p>
+<h2 id="4-把github对应的公钥上传到服务器"><a href="#4-把github对应的公钥上传到服务器" class="headerlink" title="4. 把github对应的公钥上传到服务器"></a>4. 把github对应的公钥上传到服务器</h2><p>在GitHub的setting中，找到SSH and GPG keys的设置选项，点击New SSH key<br>用记事本打开id_rsa.pub，把里面的信息复制进去，创建即可。<br><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1557970415673-5e9fe1e6-aab3-4ac4-8a51-611a2862e3d8.png#align=left&amp;display=inline&amp;height=521&amp;name=image.png&amp;originHeight=469&amp;originWidth=1071&amp;size=58790&amp;status=done&amp;width=1190.0000315242353" alt="image.png"></p>
+<p>把两个帐号都设置好<br><a name="faycj"></a></p>
+<h2 id="5-添加私钥"><a href="#5-添加私钥" class="headerlink" title="5. 添加私钥"></a>5. <strong>添加私钥</strong></h2><p><a name="Nc93g"></a></p>
+<h3 id="1-打开ssh-agent"><a href="#1-打开ssh-agent" class="headerlink" title="1.打开ssh-agent"></a>1.打开ssh-agent</h3><p>(1)如果你是github官方的bash：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-agent -s</span><br></pre></td></tr></table></figure>
+<p>(2) 如果你是其它，比如我用的是git bash：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eval $(ssh-agent -s)</span><br></pre></td></tr></table></figure>
+<p><a name="1zA1K"></a></p>
+<h3 id="2-添加私钥"><a href="#2-添加私钥" class="headerlink" title="2.添加私钥"></a>2.添加私钥</h3><p><a name="ENdGn"></a></p>
+<p>###<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/id_rsa_zcc</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/id_rsa_lxh</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1557971704685-32fb36d2-f710-40cb-a3b3-34d45dce7120.png#align=left&amp;display=inline&amp;height=276&amp;name=image.png&amp;originHeight=248&amp;originWidth=582&amp;size=24673&amp;status=done&amp;width=646.6666837974835" alt="image.png"></p>
+<p><a name="ypRb1"></a></p>
+<h2 id="6-创建config文件"><a href="#6-创建config文件" class="headerlink" title="6.创建config文件"></a>6.<strong>创建config文件</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch config</span><br></pre></td></tr></table></figure>
+<p>此时会出现空的config文件(由于我当前是在~路径下，所以创建出来的文件在C:\Users\75250路径下，把他拷贝到.ssh文件夹里即可)，然后添加如下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># zcc(xxx@xx.com)</span><br><span class="line">Host zcc.github.com</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa_zcc</span><br><span class="line">User zcc</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># lxh(xxx@xx.com)</span><br><span class="line">Host lxh.github.com</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa_two</span><br><span class="line">User lxh</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意：配置项前面不能有空格，不然会报错，如下图</strong><br><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1557972381175-81389574-487d-4ce7-8e22-817f4d7819bf.png#align=left&amp;display=inline&amp;height=312&amp;name=image.png&amp;originHeight=281&amp;originWidth=579&amp;size=36566&amp;status=done&amp;width=643.333350375847" alt="image.png"><br><a name="etdU1"></a></p>
+<h2 id="7-远程测试【可跳过】"><a href="#7-远程测试【可跳过】" class="headerlink" title="7.远程测试【可跳过】"></a>7.远程测试【可跳过】</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh –T git@github.com</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/316012/1557976439878-a44ffd7a-a194-4c2e-a1b2-7ef7a092299b.png#align=left&amp;display=inline&amp;height=81&amp;name=image.png&amp;originHeight=73&amp;originWidth=565&amp;size=6534&amp;status=done&amp;width=627.77779440821" alt="image.png"><br>说明已经配置成功了<br><a name="c948N"></a></p>
+<h2 id="8、使用"><a href="#8、使用" class="headerlink" title="8、使用"></a>8、使用</h2><p>1、clone到本地<br> 比如我们要clone一个learngit.git到本地<br>(1)原来的写法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com: github的用户名/learngit.git</span><br></pre></td></tr></table></figure>
+<p>(2)现在的写法：<br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@zcc.github.com: zcc的github的用户名/learngit.git</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@lxh.github.com:  lxh的github的用户名/learngit.git</span><br></pre></td></tr></table></figure>
+<p> <br>2、记得给这个仓库设置局部的用户名和邮箱：<br>$ git config user.name “one_name” ; git config user.email “one_email”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name &quot;zcc&quot;</span><br><span class="line">git config user.email &quot;xx@xx.com&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name &quot;lxh&quot;</span><br><span class="line">git config user.email &quot;xx@xx.com&quot;</span><br></pre></td></tr></table></figure>
+<p>3、上述都成功后，会发现钥匙会由灰变绿。<br>**</p>
+
+      
+    </div>
+    
+    
+    
+	
+	<div>
+      
+        
+      
+	</div>
+    
+	  <div>
+		
+		<div>
+    
+        <div style="text-align:center;color: #555;font-size:14px;">-------------The End-------------</div>
+    
+</div>
+		
+	  </div>
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>码字不易，请我喝杯咖啡吧~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="七月的Leo 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="七月的Leo 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/yuque/《权利的游戏》资源分享(第五集熟肉)/" rel="next" title="《权利的游戏》资源分享(第五集熟肉)">
+                <i class="fa fa-chevron-left"></i> 《权利的游戏》资源分享(第五集熟肉)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/yuque/通过修改hosts解决Git Clone速度慢/" rel="prev" title="通过修改hosts解决Git Clone速度慢">
+                通过修改hosts解决Git Clone速度慢 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cadf2f8d7285698" async="async"></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzUwMy8yMDA0Mw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpeg" alt="七月的Leo">
+            
+              <p class="site-author-name" itemprop="name">七月的Leo</p>
+              <p class="site-description motion-element" itemprop="description">I'm superman,but can't fly.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhongchaocheng" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+		
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.apachecn.org/" title="ApacheCN" target="_blank">ApacheCN</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+		  </div>
+		<!-- 音乐播放器-->
+		<div>
+			
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=0&id=2736125859&auto=0&height=32"></iframe>
+			
+		</div>
+          
+
+        </div>
+
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-生成github-com第一个帐号对应的私钥公钥"><span class="nav-number">1.</span> <span class="nav-text">1.生成github.com第一个帐号对应的私钥公钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-同样的方式再生成第二个帐号对应的私钥公钥"><span class="nav-number">2.</span> <span class="nav-text">2.同样的方式再生成第二个帐号对应的私钥公钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-把上面得到的文件拷贝到git默认访问的-ssh目录"><span class="nav-number">3.</span> <span class="nav-text">3. 把上面得到的文件拷贝到git默认访问的.ssh目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-把github对应的公钥上传到服务器"><span class="nav-number">4.</span> <span class="nav-text">4. 把github对应的公钥上传到服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-添加私钥"><span class="nav-number">5.</span> <span class="nav-text">5. 添加私钥</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-打开ssh-agent"><span class="nav-number">5.1.</span> <span class="nav-text">1.打开ssh-agent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-添加私钥"><span class="nav-number">5.2.</span> <span class="nav-text">2.添加私钥</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-创建config文件"><span class="nav-number">6.</span> <span class="nav-text">6.创建config文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-远程测试【可跳过】"><span class="nav-number">7.</span> <span class="nav-text">7.远程测试【可跳过】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8、使用"><span class="nav-number">8.</span> <span class="nav-text">8、使用</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+ 
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">七月的Leo</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">6.4k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <span class="post-count">Total Words:6.4k</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
